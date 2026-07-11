@@ -5,6 +5,7 @@ import Header from '../components/Header.astro';
 
 const sinapses = (await getCollection('sinapses', ({ data }) => !data.draft))
   .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const currentYear = new Date().getFullYear();
 
 const formatDate = (date: Date) => new Intl.DateTimeFormat('pt-BR', {
   day: '2-digit', month: 'short', year: 'numeric', timeZone: 'UTC',
@@ -54,6 +55,6 @@ const formatDate = (date: Date) => new Intl.DateTimeFormat('pt-BR', {
       </div>
     </section>
 
-    <footer><span>Luciano Panepucci</span><span>São Carlos · SP</span><span>© 2026</span></footer>
+    <footer><span>Luciano Panepucci</span><span>São Carlos · SP</span><span>© {currentYear}</span></footer>
   </main>
 </Base>

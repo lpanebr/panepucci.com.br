@@ -10,6 +10,7 @@ export async function getStaticPaths() {
 
 const { entry } = Astro.props;
 const { Content } = await render(entry);
+const currentYear = new Date().getFullYear();
 const date = new Intl.DateTimeFormat('pt-BR', {
   day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC',
 }).format(entry.data.date);
@@ -24,6 +25,6 @@ const date = new Intl.DateTimeFormat('pt-BR', {
       <h1>{entry.data.title}</h1>
       <div class="prose"><Content /></div>
     </article>
-    <footer><span>Luciano Panepucci</span><span>São Carlos · SP</span><span>© 2026</span></footer>
+    <footer><span>Luciano Panepucci</span><span>São Carlos · SP</span><span>© {currentYear}</span></footer>
   </main>
 </Base>
