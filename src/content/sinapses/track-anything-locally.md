@@ -9,4 +9,14 @@ Algumas ideias pedem um sistema. Outras pedem apenas um arquivo de texto e a lib
 O [ZenTracker](https://github.com/lpanebr/zentracker) nasceu dessa segunda espécie de ideia: acompanhar qualquer coisa, localmente e em texto puro.
 
 
-![Quick start](/sinapses/track-anything-locally/quick-start.gif)
+<img
+  src="/sinapses/track-anything-locally/quick-start.gif"
+  alt=""
+  style="display:block; max-width:640px; width:100%; margin:2rem auto;"
+/>
+
+<img
+  src="/sinapses/track-anything-locally/same-day-aggregation.gif"
+  alt=""
+  style="display:block; max-width:640px; width:100%; margin:2rem auto;"
+/>
