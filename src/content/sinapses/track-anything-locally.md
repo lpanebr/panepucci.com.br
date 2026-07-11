@@ -8,15 +8,20 @@ Algumas ideias pedem um sistema. Outras pedem apenas um arquivo de texto e a lib
 
 O [ZenTracker](https://github.com/lpanebr/zentracker) nasceu dessa segunda espécie de ideia: acompanhar qualquer coisa, localmente e em texto puro.
 
+```bash
+$ zt add +peso 95.2 +humor empolgado
+recorded 2 metrics across 1 date group:
+- 2026-07-11: peso, humou
+```
 
 <img
   src="/sinapses/track-anything-locally/quick-start.gif"
   alt=""
-  style="display:block; max-width:640px; width:100%; margin:2rem auto;"
+  class="prose-media"
 />
 
 <img
   src="/sinapses/track-anything-locally/same-day-aggregation.gif"
   alt=""
-  style="display:block; max-width:640px; width:100%; margin:2rem auto;"
+  class="prose-media"
 />

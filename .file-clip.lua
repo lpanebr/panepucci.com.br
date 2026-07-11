@@ -48,9 +48,9 @@ return {
 					template = "[$CURSOR]($FILE_PATH)",
 					templates_by_extension = image_templates([[
 <img
+  class="prose-media"
   src="$FILE_PATH"
   alt="$CURSOR"
-  style="display:block; max-width:640px; width:100%; margin:2rem auto;"
 />
           ]]),
 				},
