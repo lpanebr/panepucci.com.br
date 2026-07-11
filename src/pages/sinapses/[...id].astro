@@ -18,7 +18,11 @@ const date = new Intl.DateTimeFormat('pt-BR', {
 
 <Base title={`${entry.data.title} — Luciano Panepucci`} description={entry.data.description}>
   <main class="article-page">
-    <div class="article-header"><Header /></div>
+    <div class="article-header">
+      <div class="header-shell">
+        <Header />
+      </div>
+    </div>
     <article class="article-shell">
       <a class="back" href="/#sinapses">← Todas as sinapses</a>
       <time datetime={entry.data.date.toISOString()}>{date}</time>
