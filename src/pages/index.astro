@@ -1,0 +1,59 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Header from '../components/Header.astro';
+
+const sinapses = (await getCollection('sinapses', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const formatDate = (date: Date) => new Intl.DateTimeFormat('pt-BR', {
+  day: '2-digit', month: 'short', year: 'numeric', timeZone: 'UTC',
+}).format(date).replace('.', '');
+---
+
+<Base>
+  <main>
+    <section class="hero" id="inicio">
+      <Header />
+      <div class="hero-image" aria-hidden="true"></div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow">panepucci.com.br</p>
+        <h1>Luciano<br />Panepucci</h1>
+        <p class="tagline">Tecnologia, publicação científica<br />e outras <em>sinapses.</em></p>
+        <a class="down" href="#sinapses"><span>Explorar</span><b>↓</b></a>
+      </div>
+    </section>
+
+    <section class="notes" id="sinapses">
+      <div class="section-heading">
+        <p class="eyebrow">Pensamentos em movimento</p>
+        <h2>Sinapses</h2>
+        <p>Notas publicadas quando existe algo que merece permanecer.</p>
+      </div>
+      <div class="note-list">
+        {sinapses.map((sinapse, index) => (
+          <a class="note" href={`/sinapses/${sinapse.id}/`}>
+            <span class="note-number">{String(index + 1).padStart(2, '0')}</span>
+            <span class="note-content">
+              <time datetime={sinapse.data.date.toISOString()}>{formatDate(sinapse.data.date)}</time>
+              <strong>{sinapse.data.title}</strong>
+              <span>{sinapse.data.description}</span>
+            </span>
+            <span class="arrow" aria-hidden="true">↗</span>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="about" id="sobre">
+      <p class="eyebrow">Sobre</p>
+      <div>
+        <h2>Ideias não nascem organizadas.</h2>
+        <p>Sou Luciano Panepucci. Trabalho na interseção entre tecnologia, publicação científica e processos editoriais. Este é um espaço pessoal para registrar o que atravessa esses territórios — e o que aparecer entre eles.</p>
+      </div>
+    </section>
+
+    <footer><span>Luciano Panepucci</span><span>São Carlos · SP</span><span>© 2026</span></footer>
+  </main>
+</Base>

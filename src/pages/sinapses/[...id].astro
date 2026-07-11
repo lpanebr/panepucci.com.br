@@ -1,0 +1,29 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Header from '../../components/Header.astro';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('sinapses', ({ data }) => !data.draft);
+  return entries.map((entry) => ({ params: { id: entry.id }, props: { entry } }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const date = new Intl.DateTimeFormat('pt-BR', {
+  day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC',
+}).format(entry.data.date);
+---
+
+<Base title={`${entry.data.title} — Luciano Panepucci`} description={entry.data.description}>
+  <main class="article-page">
+    <div class="article-header"><Header /></div>
+    <article class="article-shell">
+      <a class="back" href="/#sinapses">← Todas as sinapses</a>
+      <time datetime={entry.data.date.toISOString()}>{date}</time>
+      <h1>{entry.data.title}</h1>
+      <div class="prose"><Content /></div>
+    </article>
+    <footer><span>Luciano Panepucci</span><span>São Carlos · SP</span><span>© 2026</span></footer>
+  </main>
+</Base>
