@@ -231,6 +231,7 @@ footer {
 .note {
   display: grid;
   grid-template-columns: 1fr 7fr auto;
+  align-items: center;
   gap: 32px;
   padding: 42px 0;
   border-bottom: 1px solid var(--line);
@@ -247,7 +248,7 @@ footer {
 
 .note:hover .arrow,
 .note:focus-visible .arrow {
-  transform: translate(4px, -4px);
+  transform: translateX(4px);
 }
 
 .note-number,
@@ -280,6 +281,7 @@ time {
 }
 
 .arrow {
+  margin-right: 16px;
   font-size: 25px;
   color: #6d8c8e;
   transition: transform 0.2s;
