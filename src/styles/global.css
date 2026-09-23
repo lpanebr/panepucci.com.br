@@ -162,7 +162,7 @@ nav a:focus-visible {
   font-size: 17px;
 }
 
-.notes,
+.notes-inner,
 .about,
 footer {
   width: min(1180px, calc(100% - 48px));
@@ -170,7 +170,33 @@ footer {
 }
 
 .notes {
+  overflow: hidden;
   padding: 130px 0 150px;
+}
+
+.notes-inner {
+  position: relative;
+}
+
+.notes-inner::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: -330px;
+  left: -415px;
+  width: 900px;
+  aspect-ratio: 1;
+  pointer-events: none;
+  background: #39767b;
+  opacity: 0.4;
+  transform: rotate(15deg);
+  -webkit-mask: url("/neuron-mask.svg") center / contain no-repeat;
+  mask: url("/neuron-mask.svg") center / contain no-repeat;
+}
+
+.notes-inner > * {
+  position: relative;
+  z-index: 1;
 }
 
 .section-heading {
@@ -521,7 +547,7 @@ footer {
 @media (max-width: 700px) {
   .site-header,
   .hero-content,
-  .notes,
+  .notes-inner,
   .about,
   footer {
     width: min(100% - 32px, 1180px);
@@ -583,6 +609,12 @@ footer {
   .section-heading {
     display: block;
     padding-bottom: 38px;
+  }
+
+  .notes-inner::before {
+    top: -210px;
+    left: -300px;
+    width: 750px;
   }
 
   .section-heading h2 {

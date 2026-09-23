@@ -29,23 +29,25 @@ const formatDate = (date: Date) => new Intl.DateTimeFormat('pt-BR', {
     </section>
 
     <section class="notes" id="sinapses">
-      <div class="section-heading">
-        <p class="eyebrow">Pensamentos em movimento</p>
-        <h2>Sinapses</h2>
-        <p>Notas publicadas quando existe algo que merece permanecer.</p>
-      </div>
-      <div class="note-list">
-        {sinapses.map((sinapse, index) => (
-          <a class="note" href={`/sinapses/${sinapse.id}/`}>
-            <span class="note-number">{String(index + 1).padStart(2, '0')}</span>
-            <span class="note-content">
-              <time datetime={sinapse.data.date.toISOString()}>{formatDate(sinapse.data.date)}</time>
-              <strong>{sinapse.data.title}</strong>
-              <span>{sinapse.data.description}</span>
-            </span>
-            <span class="arrow" aria-hidden="true">↗</span>
-          </a>
-        ))}
+      <div class="notes-inner">
+        <div class="section-heading">
+          <p class="eyebrow">Pensamentos em movimento</p>
+          <h2>Sinapses</h2>
+          <p>Notas publicadas quando existe algo que merece permanecer.</p>
+        </div>
+        <div class="note-list">
+          {sinapses.map((sinapse, index) => (
+            <a class="note" href={`/sinapses/${sinapse.id}/`}>
+              <span class="note-number">{String(index + 1).padStart(2, '0')}</span>
+              <span class="note-content">
+                <time datetime={sinapse.data.date.toISOString()}>{formatDate(sinapse.data.date)}</time>
+                <strong>{sinapse.data.title}</strong>
+                <span>{sinapse.data.description}</span>
+              </span>
+              <span class="arrow" aria-hidden="true">↗</span>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
 
