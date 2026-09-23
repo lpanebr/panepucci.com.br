@@ -25,7 +25,7 @@ Este registro é para tentar gravar de forma mais permanente uma operação do N
 	hl.bind("P", focus_and_reset("/home/lpanebr/Dropbox/github/editoracubo/periodikos.git/"))
 ```
 
-Consultei o help. Claro que eu já tinha feito isso no passado, muito tempo atrás, mas, como tudo que não é usado com a assiduidade mínima necessária, essa memória de curta duração sempre evaporava.
+Consultei o help. Claro que eu já tinha feito isso no passado, muito tempo atrás, mas, assim como tudo o que não é usado com uma assiduidade mínima, essa memória de curta duração sempre evaporava.
 
 Na era mais recente, pedir para uma ferramenta de IA qualquer me dar o comando e copiar sem usar minhas partes orgânicas para processamento de dados não ajudou, muito pelo contrário, obviamente.
 
