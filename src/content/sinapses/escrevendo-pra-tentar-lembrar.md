@@ -4,13 +4,13 @@ description: Registrando como usar o `sort/pattern/` para lembrar amanhã.
 date: 2026-09-23
 ---
 
-Não é sobre uma ordem semanticamente filosófica, embora essa está em baixa atualmente.
+Não é sobre uma ordem semanticamente filosófica, embora essa esteja em baixa atualmente.
 
 Este registro é para tentar gravar de forma mais permanente uma operação do Neovim que eu costumo querer usar com frequência, mas acabo desistindo quando não me lembro, porque não é algo mortalmente importante.
 
 > [!question] Como ordenar linhas descartando uma parte inicial?
 > O uso mais recente foi bem inútil e mundano.
-> Eu só queria colocar as definições dos meus atalhos segundo o diretório de destino.
+> Eu só queria classificar as definições dos meus atalhos segundo o diretório de destino.
 
 ```lua
 	hl.bind("D", focus_and_reset("/home/lpanebr/Dropbox/github/lpanebr/dotfiles/"))

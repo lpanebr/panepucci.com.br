@@ -349,17 +349,19 @@ footer {
 }
 
 .prose .callout {
+  --callout-color: 57, 118, 123;
+  --callout-icon: "i";
   position: relative;
   margin: 2rem 0;
   padding: 1.15rem 1.35rem 1.15rem 3.6rem;
-  border: 1px solid rgba(7, 44, 59, 0.18);
-  border-left: 4px solid #568e91;
+  border: 1px solid rgba(var(--callout-color), 0.25);
+  border-left: 4px solid rgb(var(--callout-color));
   border-radius: 10px;
-  background: rgba(168, 217, 209, 0.2);
+  background: rgba(var(--callout-color), 0.09);
 }
 
 .prose .callout::before {
-  content: "?";
+  content: var(--callout-icon);
   position: absolute;
   top: 1.25rem;
   left: 1.25rem;
@@ -367,13 +369,73 @@ footer {
   height: 1.35rem;
   display: grid;
   place-items: center;
-  border: 2px solid #39767b;
+  border: 2px solid rgb(var(--callout-color));
   border-radius: 50%;
-  color: #39767b;
+  color: rgb(var(--callout-color));
   font-family: Arial, Helvetica, sans-serif;
   font-size: 0.82rem;
   font-weight: 700;
   line-height: 1;
+}
+
+.prose :is(.callout-note, .callout-todo) {
+  --callout-color: 45, 109, 149;
+  --callout-icon: "i";
+}
+
+.prose :is(.callout-abstract, .callout-summary, .callout-tldr) {
+  --callout-color: 34, 132, 139;
+  --callout-icon: "≡";
+}
+
+.prose .callout-info {
+  --callout-color: 45, 109, 149;
+  --callout-icon: "i";
+}
+
+.prose :is(.callout-tip, .callout-hint, .callout-important) {
+  --callout-color: 43, 126, 94;
+  --callout-icon: "!";
+}
+
+.prose :is(.callout-success, .callout-check, .callout-done) {
+  --callout-color: 48, 132, 74;
+  --callout-icon: "✓";
+}
+
+.prose :is(.callout-question, .callout-help, .callout-faq) {
+  --callout-color: 57, 118, 123;
+  --callout-icon: "?";
+}
+
+.prose :is(.callout-warning, .callout-caution, .callout-attention) {
+  --callout-color: 166, 112, 28;
+  --callout-icon: "!";
+}
+
+.prose :is(.callout-failure, .callout-fail, .callout-missing) {
+  --callout-color: 166, 74, 65;
+  --callout-icon: "×";
+}
+
+.prose :is(.callout-danger, .callout-error) {
+  --callout-color: 177, 53, 53;
+  --callout-icon: "!";
+}
+
+.prose .callout-bug {
+  --callout-color: 137, 70, 116;
+  --callout-icon: "×";
+}
+
+.prose .callout-example {
+  --callout-color: 107, 82, 145;
+  --callout-icon: "→";
+}
+
+.prose :is(.callout-quote, .callout-cite) {
+  --callout-color: 98, 114, 121;
+  --callout-icon: "”";
 }
 
 .prose .callout p:last-child {
