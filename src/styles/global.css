@@ -297,8 +297,36 @@ footer {
 }
 
 .article-page {
+  position: relative;
   min-height: 100vh;
+  overflow: hidden;
   padding-top: 94px;
+}
+
+.article-page::before,
+.article-page::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  width: 780px;
+  aspect-ratio: 1;
+  pointer-events: none;
+  background: #39767b;
+  opacity: 0.1;
+  -webkit-mask: url("/neuron-mask.svg") center / contain no-repeat;
+  mask: url("/neuron-mask.svg") center / contain no-repeat;
+}
+
+.article-page::before {
+  top: -60px;
+  left: -240px;
+  transform: rotate(15deg);
+}
+
+.article-page::after {
+  right: -240px;
+  bottom: -60px;
+  transform: rotate(165deg);
 }
 
 .article-header {
@@ -307,9 +335,16 @@ footer {
 }
 
 .article-shell {
+  position: relative;
+  z-index: 1;
   width: min(780px, calc(100% - 48px));
   margin: 0 auto;
   padding: 100px 0 140px;
+}
+
+.article-page > footer {
+  position: relative;
+  z-index: 1;
 }
 
 .back {
@@ -502,6 +537,21 @@ footer {
 
   .article-page {
     padding-top: 74px;
+  }
+
+  .article-page::before,
+  .article-page::after {
+    width: 585px;
+  }
+
+  .article-page::before {
+    top: -35px;
+    left: -245px;
+  }
+
+  .article-page::after {
+    right: -245px;
+    bottom: -35px;
   }
 
   nav {
