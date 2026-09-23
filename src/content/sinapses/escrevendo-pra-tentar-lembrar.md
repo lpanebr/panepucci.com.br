@@ -33,7 +33,8 @@ Bem, hoje eu decidi fazer algo à respeito. Talvez tenha sido só uma boa descul
 
 Enfim, me lembrei que criei este blog/website/sei-lá e resolvi tentar consolidar esse aprendizado de uma vez por todas! (assim espero...)
 
-**Para classificar linhas no Neovim descartando uma parte inicial eu preciso me lembrar que basta passar o parâmetro `/pattern/` ao comando `sort`.**
+> [!info] Para classificar linhas no Neovim descartando uma parte inicial 
+> eu preciso me lembrar que basta passar o parâmetro `/pattern/` ao comando `sort`.
 
 Por exemplo, para classificar as linhas dos meus atalhos, acima:
 
